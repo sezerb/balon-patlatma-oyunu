@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #739ecf;
+  }
+  
+  #score {
+    font-size: 24px;
+    margin: 10px;
+    color: #555;
+  }
+  
+  canvas {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #333;
+    background-color: #a2d5f2;
+    width: 100%;  /* Tarayıcı genişliğine uyum sağlar */
+    max-width: 800px;
+    height: auto; /* Oran koruma sağlanır */
+  }

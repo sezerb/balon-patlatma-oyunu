@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balon Patlatma Oyunu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Hızlı Balonlar</h1>
+
+  <!-- Oyuna Başla Butonu -->
+  <button id="startGame" style="display: block; margin: 20px auto; padding: 10px 20px; font-size: 20px;">
+    Oyuna Başla
+  </button>
+
+  <!-- Canvas (Oyun Ekranı) -->
+  <canvas id="gameCanvas" style="display: none;"></canvas>
+
+  <!-- Skor ve Diğer Bilgiler -->
+  <div>
+    <p id="score">Skor: 0</p>
+    <p id="missed">Kaçırılan: 0</p>
+    <p id="level">Bölüm: 1</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
