@@ -36,22 +36,22 @@ startButton.addEventListener('click', () => {
   });
 
 const levels = [
-  { scoreToAdvance: 100, background: 'background1.jpg', balloonSpeedFactor: 1.0, balloonCount: 1 },
-  { scoreToAdvance: 200, background: 'background2.jpg', balloonSpeedFactor: 1.5, balloonCount: 2 },
-  { scoreToAdvance: 300, background: 'background3.jpg', balloonSpeedFactor: 2.0, balloonCount: 3 },
-  { scoreToAdvance: 400, background: 'background1.jpg', balloonSpeedFactor: 2.5, balloonCount: 4 },
-  { scoreToAdvance: 500, background: 'background2.jpg', balloonSpeedFactor: 3.0, balloonCount: 5 },
-  { scoreToAdvance: 600, background: 'background3.jpg', balloonSpeedFactor: 3.5, balloonCount: 6 },
-  { scoreToAdvance: 700, background: 'background1.jpg', balloonSpeedFactor: 4.0, balloonCount: 7 },
-  { scoreToAdvance: 800, background: 'background2.jpg', balloonSpeedFactor: 4.5, balloonCount: 8 },
-  { scoreToAdvance: 900, background: 'background3.jpg', balloonSpeedFactor: 5.0, balloonCount: 9 },
-  { scoreToAdvance: 1000, background: 'background10.jpg', balloonSpeedFactor: 5.5, balloonCount: 10 }
+  { scoreToAdvance: 100, background: 'assets/background1.jpg', balloonSpeedFactor: 1.0, balloonCount: 1 },
+  { scoreToAdvance: 200, background: 'assets/background2.jpg', balloonSpeedFactor: 1.5, balloonCount: 2 },
+  { scoreToAdvance: 300, background: 'assets/background3.jpg', balloonSpeedFactor: 2.0, balloonCount: 3 },
+  { scoreToAdvance: 400, background: 'assets/background1.jpg', balloonSpeedFactor: 2.5, balloonCount: 4 },
+  { scoreToAdvance: 500, background: 'assets/background2.jpg', balloonSpeedFactor: 3.0, balloonCount: 5 },
+  { scoreToAdvance: 600, background: 'assets/background3.jpg', balloonSpeedFactor: 3.5, balloonCount: 6 },
+  { scoreToAdvance: 700, background: 'assets/background1.jpg', balloonSpeedFactor: 4.0, balloonCount: 7 },
+  { scoreToAdvance: 800, background: 'assets/background2.jpg', balloonSpeedFactor: 4.5, balloonCount: 8 },
+  { scoreToAdvance: 900, background: 'assets/background3.jpg', balloonSpeedFactor: 5.0, balloonCount: 9 },
+  { scoreToAdvance: 1000, background: 'assets/background10.jpg', balloonSpeedFactor: 5.5, balloonCount: 10 }
 ];
 
 const backgroundImage = new Image();
 backgroundImage.src = levels[0].background;
 
-const balloonImages = ['balloon1.png', 'balloon2.png'];
+const balloonImages = ['assets/balloon1.png', 'assets/balloon2.png'];
 
 function createBalloon() {
   const x = Math.random() * (canvas.width - 100);
