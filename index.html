@@ -1,27 +1,96 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Balon Patlatma Oyunu</title>
+  <title>Quick Balloons</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hızlı Balonlar</h1>
 
-  <!-- Oyuna Başla Butonu -->
-  <button id="startGame" style="display: block; margin: 20px auto; padding: 10px 20px; font-size: 20px;">
-    Oyuna Başla
-  </button>
+  <!-- ======= SPLASH SCREEN ======= -->
+  <div id="splash" class="overlay">
+    <div class="overlay-card">
+      <h1 class="game-title">🎈 Quick Balloons</h1>
+      <p class="game-subtitle">How fast are you?</p>
+      <div class="instructions">
+        <p>🖱️ <strong>Click</strong> balloons to pop them!</p>
+        <p>❤️ Miss 10 balloons and it's Game Over</p>
+        <p>⚡ Pop fast to build a combo multiplier!</p>
+        <p>🚀 Fill the progress bar to advance levels</p>
+      </div>
+      <div class="highscore-row">🏆 Best Score: <span id="splashHighScoreValue">0</span></div>
+      <button id="startGame" class="btn-primary">▶ Start Game</button>
+    </div>
+  </div>
 
-  <!-- Canvas (Oyun Ekranı) -->
-  <canvas id="gameCanvas" style="display: none;"></canvas>
+  <!-- ======= LEVEL-UP BANNER ======= -->
+  <div id="levelup" class="overlay hidden">
+    <div class="levelup-card">
+      <div class="levelup-icon">🚀</div>
+      <h2 id="levelupText">Level 2</h2>
+      <p>Get ready!</p>
+    </div>
+  </div>
 
-  <!-- Skor ve Diğer Bilgiler -->
-  <div>
-    <p id="score">Skor: 0</p>
-    <p id="missed">Kaçırılan: 0</p>
-    <p id="level">Bölüm: 1</p>
+  <!-- ======= WIN OVERLAY ======= -->
+  <div id="win" class="overlay hidden">
+    <div class="overlay-card win-card">
+      <div class="win-icon">🎉</div>
+      <h2 class="win-title">You Won!</h2>
+      <p class="win-subtitle">All 10 levels cleared!</p>
+      <p class="final-score-label">Final Score</p>
+      <p class="final-score" id="winScore">0</p>
+      <div class="highscore-row" id="winHighScoreRow">🏆 Best: 0</div>
+      <p class="new-record hidden" id="winNewRecord">🎉 New Record!</p>
+      <button id="winRestartGame" class="btn-primary btn-gold">▶ Play Again</button>
+    </div>
+  </div>
+
+  <!-- ======= GAME OVER OVERLAY ======= -->
+  <div id="gameover" class="overlay hidden">
+    <div class="overlay-card gameover-card">
+      <h2 class="gameover-title">💥 Game Over</h2>
+      <p class="final-score-label">Your Score</p>
+      <p class="final-score" id="finalScore">0</p>
+      <div class="highscore-row" id="gameoverHighScoreRow">🏆 Best: <span id="gameoverHighScoreValue">0</span></div>
+      <p class="new-record hidden" id="newRecord">🎉 New Record!</p>
+      <button id="restartGame" class="btn-primary">🔄 Play Again</button>
+    </div>
+  </div>
+
+  <!-- ======= GAME CONTAINER ======= -->
+  <div id="gameContainer">
+
+    <!-- HUD Bar -->
+    <div id="hud">
+      <div class="hud-item">
+        <span class="hud-label">Score</span>
+        <span class="hud-value" id="scoreValue">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Combo</span>
+        <span class="hud-value combo-value" id="comboValue">×1</span>
+      </div>
+      <div class="hud-item hud-item--progress">
+        <span class="hud-label">Level <span id="levelValue">1</span></span>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        <span class="progress-label" id="progressLabel">0 / 100</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Lives</span>
+        <div class="hearts" id="heartsDisplay"></div>
+      </div>
+    </div>
+
+    <!-- Game Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
   </div>
 
   <script src="script.js"></script>
